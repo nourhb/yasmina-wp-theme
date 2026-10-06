@@ -1,0 +1,363 @@
+/*
+Theme Name: Yasmina
+Theme URI: https://github.com/Nourhb/yasmina-wp-theme
+Author: Nour El Houda Bouajila
+Author URI: https://nour-el-houda-bouajila.rf.gd/
+Description: Yasmina is an elegant Full Site Editing theme crafted for beauty salons, spas, and cosmetics brands. Soft blush tones, refined serif typography, and ready-made patterns for services, price lists, galleries, testimonials, and booking calls to action.
+Version: 1.0.0
+Requires at least: 6.4
+Tested up to: 6.9
+Requires PHP: 7.4
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: yasmina
+Tags: blog, portfolio, custom-colors, custom-menu, custom-logo, editor-style, featured-images, full-site-editing, block-patterns, block-styles, threaded-comments, translation-ready, wide-blocks
+*/
+
+/* ============================================================
+   Yasmina — front-end polish
+   Design tokens come from theme.json; this file adds motion,
+   hover states, and delicate decorative details.
+   ============================================================ */
+
+/* ---------- Base ---------- */
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+}
+
+::selection {
+	background: var(--wp--preset--color--blush);
+	color: var(--wp--preset--color--charcoal);
+}
+
+/* Visible keyboard focus for every interactive element */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+.wp-block-button__link:focus-visible {
+	outline: 2px solid var(--wp--preset--color--gold);
+	outline-offset: 3px;
+	border-radius: 4px;
+}
+
+/* ---------- Buttons ---------- */
+
+.wp-block-button__link {
+	transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.wp-block-button__link:hover {
+	transform: translateY(-2px);
+	box-shadow: var(--wp--preset--shadow--soft);
+}
+
+/* Pill button block style */
+.wp-block-button.is-style-pill .wp-block-button__link {
+	border-radius: 999px;
+	padding: 0.85em 2.2em;
+}
+
+/* Outline-gold button block style */
+.wp-block-button.is-style-outline-gold .wp-block-button__link {
+	background: transparent;
+	color: var(--wp--preset--color--gold);
+	border: 1.5px solid var(--wp--preset--color--gold);
+	border-radius: 999px;
+	padding: 0.85em 2.2em;
+	box-shadow: none;
+}
+
+.wp-block-button.is-style-outline-gold .wp-block-button__link:hover {
+	background: var(--wp--preset--color--gold);
+	color: var(--wp--preset--color--white);
+	transform: translateY(-2px);
+	box-shadow: var(--wp--preset--shadow--gold-glow);
+}
+
+/* ---------- Cards ---------- */
+
+.is-style-card {
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.is-style-card:hover {
+	transform: translateY(-6px);
+	box-shadow: var(--wp--preset--shadow--soft-large);
+}
+
+/* ---------- Gallery zoom ---------- */
+
+.wp-block-gallery .wp-block-image img {
+	transition: transform 0.5s ease;
+}
+
+.wp-block-gallery .wp-block-image {
+	overflow: hidden;
+	border-radius: 12px;
+}
+
+.wp-block-gallery .wp-block-image:hover img {
+	transform: scale(1.06);
+}
+
+/* Post card images */
+.yasmina-post-card .wp-block-post-featured-image {
+	overflow: hidden;
+	border-radius: 12px 12px 0 0;
+}
+
+.yasmina-post-card .wp-block-post-featured-image img {
+	transition: transform 0.5s ease;
+}
+
+.yasmina-post-card:hover .wp-block-post-featured-image img {
+	transform: scale(1.05);
+}
+
+/* ---------- Delicate dividers ---------- */
+
+.wp-block-separator {
+	border: none;
+	border-top: 1px solid var(--wp--preset--color--blush);
+	max-width: 220px;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	overflow: visible;
+}
+
+.wp-block-separator::after {
+	content: "";
+	position: absolute;
+	top: -4px;
+	left: 50%;
+	width: 7px;
+	height: 7px;
+	background: var(--wp--preset--color--gold);
+	transform: translateX(-50%) rotate(45deg);
+}
+
+/* ---------- Eyebrow label ---------- */
+
+.yasmina-eyebrow {
+	font-family: var(--wp--preset--font-family--sans);
+	font-size: 0.8rem;
+	font-weight: 500;
+	letter-spacing: 0.28em;
+	text-transform: uppercase;
+	color: var(--wp--preset--color--gold);
+}
+
+/* ---------- Price list with dotted leaders ---------- */
+
+.yasmina-price-item {
+	display: flex;
+	align-items: baseline;
+	gap: 0.5rem;
+	padding: 0.55rem 0;
+}
+
+.yasmina-price-name {
+	flex: 1 1 auto;
+	display: flex;
+	align-items: baseline;
+	margin: 0;
+}
+
+.yasmina-price-name::after {
+	content: "";
+	flex: 1 1 auto;
+	margin: 0 0.6rem;
+	border-bottom: 2px dotted var(--wp--preset--color--rose);
+	transform: translateY(-4px);
+	min-width: 2rem;
+}
+
+.yasmina-price {
+	margin: 0;
+	font-family: var(--wp--preset--font-family--display);
+	font-size: 1.15rem;
+	color: var(--wp--preset--color--rosewood);
+	white-space: nowrap;
+}
+
+/* ---------- Large quote block style ---------- */
+
+.wp-block-quote.is-style-large {
+	border-left: 3px solid var(--wp--preset--color--gold);
+	padding: 1.5rem 0 1.5rem 2rem;
+	margin: 2.5rem 0;
+}
+
+.wp-block-quote.is-style-large p {
+	font-family: var(--wp--preset--font-family--display);
+	font-size: var(--wp--preset--font-size--x-large);
+	font-style: italic;
+	line-height: 1.45;
+}
+
+/* ---------- Tables ---------- */
+
+.wp-block-table.is-style-stripes tbody tr:nth-child(odd) {
+	background-color: var(--wp--preset--color--blush);
+}
+
+.wp-block-table table {
+	border-collapse: collapse;
+}
+
+.wp-block-table th {
+	font-family: var(--wp--preset--font-family--display);
+	font-weight: 600;
+	letter-spacing: 0.04em;
+}
+
+.wp-block-table td,
+.wp-block-table th {
+	border-bottom: 1px solid var(--wp--preset--color--blush);
+	padding: 0.8rem 1rem;
+}
+
+/* ---------- Header top bar ---------- */
+
+.yasmina-top-bar {
+	font-size: 0.82rem;
+	letter-spacing: 0.06em;
+}
+
+.yasmina-top-bar a {
+	text-decoration: none;
+}
+
+.yasmina-top-bar a:hover {
+	color: var(--wp--preset--color--gold);
+}
+
+/* Softer navigation link hovers */
+.wp-block-navigation .wp-block-navigation-item__content {
+	transition: color 0.2s ease;
+}
+
+.wp-block-navigation .wp-block-navigation-item__content:hover {
+	color: var(--wp--preset--color--gold);
+}
+
+/* ---------- Scroll reveal (progressive enhancement) ---------- */
+
+.yasmina-reveal {
+	opacity: 0;
+	transform: translateY(26px);
+	transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.yasmina-reveal.is-visible {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+/* ---------- Back to top ---------- */
+
+.yasmina-back-to-top {
+	position: fixed;
+	right: 1.5rem;
+	bottom: 1.5rem;
+	width: 3rem;
+	height: 3rem;
+	border: none;
+	border-radius: 50%;
+	background: var(--wp--preset--color--rosewood);
+	color: var(--wp--preset--color--white);
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	opacity: 0;
+	visibility: hidden;
+	transform: translateY(12px);
+	transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s, background-color 0.25s ease;
+	box-shadow: var(--wp--preset--shadow--soft);
+	z-index: 60;
+}
+
+.yasmina-back-to-top.is-visible {
+	opacity: 1;
+	visibility: visible;
+	transform: translateY(0);
+}
+
+.yasmina-back-to-top:hover {
+	background: var(--wp--preset--color--gold);
+}
+
+.yasmina-back-to-top svg {
+	width: 1.25rem;
+	height: 1.25rem;
+}
+
+/* ---------- Comments ---------- */
+
+.wp-block-comments .wp-block-comment {
+	border: 1px solid var(--wp--preset--color--blush);
+	border-radius: 12px;
+	padding: 1.25rem 1.5rem;
+	margin-bottom: 1.25rem;
+	background: var(--wp--preset--color--white);
+}
+
+/* ---------- Print ---------- */
+
+@media print {
+	.yasmina-top-bar,
+	.wp-block-navigation,
+	.yasmina-back-to-top,
+	.wp-block-comments,
+	.wp-block-post-comments-form {
+		display: none !important;
+	}
+
+	body {
+		background: #fff;
+		color: #000;
+	}
+
+	a {
+		text-decoration: none;
+		color: #000;
+	}
+}
+
+/* ---------- Reduced motion ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+	}
+
+	.yasmina-reveal {
+		opacity: 1;
+		transform: none;
+	}
+
+	.wp-block-gallery .wp-block-image:hover img,
+	.yasmina-post-card:hover .wp-block-post-featured-image img,
+	.wp-block-button__link:hover,
+	.is-style-card:hover {
+		transform: none;
+	}
+}

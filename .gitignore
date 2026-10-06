@@ -1,0 +1,31 @@
+# Node / build artifacts
+node_modules/
+dist/
+build/
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# WordPress (when developing inside a full install)
+wp-config.php
+wp-content/uploads/
+wp-content/cache/
+
+# Archives
+*.zip
+*.tar.gz
+
+# Screenshots and exports (keep the repo lean)
+*.psd
+*.sketch
+*.fig
