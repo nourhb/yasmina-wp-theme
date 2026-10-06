@@ -1,0 +1,37 @@
+/* Yasmina — editor styles.
+   Keeps the block editor visually aligned with the front end. */
+
+.editor-styles-wrapper {
+	font-family: "Jost", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: #3d2b30;
+	background-color: #fdf8f4;
+}
+
+.editor-styles-wrapper h1,
+.editor-styles-wrapper h2,
+.editor-styles-wrapper h3,
+.editor-styles-wrapper h4,
+.editor-styles-wrapper h5,
+.editor-styles-wrapper h6,
+.editor-styles-wrapper .wp-block-post-title {
+	font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+	font-weight: 500;
+	letter-spacing: 0.01em;
+}
+
+.editor-styles-wrapper .wp-block-button__link {
+	border-radius: 999px;
+}
+
+.editor-styles-wrapper .yasmina-eyebrow {
+	font-size: 0.8rem;
+	font-weight: 500;
+	letter-spacing: 0.28em;
+	text-transform: uppercase;
+	color: #c9a24b;
+}
+
+.editor-styles-wrapper .is-style-card {
+	border: 1px dashed #e8a0a8;
+	border-radius: 16px;
+}
